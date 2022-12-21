@@ -6,12 +6,61 @@
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
-var factorial = function(n) {
+let factorial = function(n) {
+    // without recursive
+    /*
+    let result = 1;
+    
+    if(n > 0){
+        for(let i=1; i <= n; i++){
+        result *= i;
+        }
+        console.log(`${n}! =`, result);
+        //return result;
+    } else if (n===0){
+        //return 1;
+        console.log(`${n}! =`, 1);
+    } else {
+        //return null;
+        console.log(`${n}! =` , undefined + " (null) ")
+    }
+    */
+    // with resursion
+    
+    //console.log(`initial: ${n}`);
+   
+        if(n > 1){
+            //console.log(`factor: ${n}! = ${result2}`);
+            return n * factorial(n -1);
+        } else if (n === 1){
+            //console.log("previous result2:",result2)
+            //console.log(`factor: ${n}! = `, 1);
+            return 1;
+        } else if (n ===0){
+            return 1;
+        
+        } else {
+            //console.log(`factor: ${n}! = n/0 = `, undefined);
+            return null;
+        }
 };
 
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+    //console.count("run time");
+    console.log(array);
+    if(array.length === 0){
+        //console.log("last:");
+        return 0;
+    } else {
+        
+        
+        
+        
+        return array[0] + sum(array.slice(1));
+    }
+    
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
