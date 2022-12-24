@@ -66,6 +66,15 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+    let result = 0;
+    for(const element of array){
+        if(Array.isArray(element)){
+            result += arraySum(element);
+        } else {
+            result += element;
+        }
+    }
+    return result;
 };
 
 // 4. Check if a number is even.
