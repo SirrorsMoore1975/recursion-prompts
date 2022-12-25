@@ -49,7 +49,7 @@ let factorial = function(n) {
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
     //console.count("run time");
-    console.log(array);
+    //console.log(array);
     if(array.length === 0){
         //console.log("last:");
         return 0;
@@ -79,23 +79,22 @@ var arraySum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
-    
-    if(n >= 2){
-        isEven(n - 2);
-    } else
-
-    if(n === 1){
+    //console.log("n:", `"${n}"`);
+    if(n > 1){
+        //console.log("n > 1:", n);
+        return isEven(n - 2);
+    } else if(n === 1){
+        //console.log("n === 1:", n);
         return false;
-    } else
-
-    if(n === 0){
+    } else if(n === 0){
+        //console.log("n === 0:",n);
         return true;
-    } else
-    
-    if(n < 0){
-        isEven(n * (-1));
-    } 
-    console.log(n);
+    } else if(n < 0){
+        //console.log("n < 1:",n);
+        return isEven(n * (-1));
+    }
+    // console.log("end:",n) 
+    // return isEven(n);
 };
 
 // 5. Sum all integers below a given integer.
